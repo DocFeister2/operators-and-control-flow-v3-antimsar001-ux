@@ -62,20 +62,33 @@ int main() {
     cout << "Invalid unit type entered! For bananas, the unit type must be 'single' or 'bunch'." << endl;
     return 1; // abort
   }
-  //...
+  if ((product_type == "apple") && !(unit_type == "single" || unit_type == "bag")) {
+    cout << "Invalid unit type entered! For apples, the unit type must be 'single' or 'bag'." << endl;
+    return 1; // abort
+  }//...
+
 
   // TODO: COMPUTE THE COST OF THIS PURCHASE
   if ((product_type == "banana") && (unit_type == "single")) {
     total_cost = quantity * (price_banana / 100.); // total cost in dollars
     //...
   }
-  if (product_type == "banana") && (unit_type == "bunch")) {
-    total_cost = quantity *   //...
-    //...
+  if ((product_type == "banana") && (unit_type == "bunch")) {
+    total_cost = quantity *  (price_bunch_bananas/100); //...
+    //
   }
-  //...
-  //...
-
+    if ((product_type == "apple") && (unit_type == "single")) {
+    total_cost = quantity * (price_apple / 100.); // total cost in dollars
+    //...
+    }
+    if ((product_type == "apple") && (unit_type == "bag")) {
+    total_cost = quantity * (price_bag_apples / 100.); // total cost in dollars
+    //...
+    }
+    if ((product_type == "watermelon") && (unit_type == "single")) {
+    total_cost = quantity * (price_watermelon / 100.); // total cost in dollars
+    //...
+    }
 
   // TODO: APPLY THE OPTIONAL DISCOUNT TO FINAL TOTAL COST
   //...

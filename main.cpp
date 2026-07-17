@@ -75,30 +75,37 @@ int main() {
   // TODO: COMPUTE THE COST OF THIS PURCHASE
   if ((product_type == "banana") && (unit_type == "single")) {
     total_cost = quantity * (price_banana / 100.); // total cost in dollars
-    //...
+    item_cost = quantity / price_banana; //total cost in dollars
   }
   if ((product_type == "banana") && (unit_type == "bunch")) {
-    total_cost = quantity *  (price_bunch_bananas/100); //...
-    //
+    total_cost = quantity *  price_bunch_bananas; // total cost in dollars
+    item_cost = quantity / (price_bunch_bananas * 7); // item cost in dollars
   }
     if ((product_type == "apple") && (unit_type == "single")) {
     total_cost = quantity * (price_apple / 100.); // total cost in dollars
+    item_cost = quantity / price_apple; // item cost in dollars
     //...
     }
     if ((product_type == "apple") && (unit_type == "bag")) {
-    total_cost = quantity * (price_bag_apples / 100.); // total cost in dollars
+    total_cost = quantity * price_bag_apples; // total cost in dollars
+    item_cost = quantity / (price_bag_apples*8); // item cost in dollars
     //...
     }
     if ((product_type == "watermelon") && (unit_type == "single")) {
-    total_cost = quantity * (price_watermelon / 100.); // total cost in dollars
-    //...
+    total_cost = quantity * price_watermelon; // total cost in dollars
+    item_cost = quantity / price_watermelon; // total cost in dollars
     }
 
-  // TODO: APPLY THE OPTIONAL DISCOUNT TO FINAL TOTAL COST
-  double discounted_cost = total_cost * (10/100);
-  cout << "your dicounted cost will be :"<< discounted_cost << endl;
+ 
+    // TODO: APPLY THE OPTIONAL DISCOUNT TO FINAL TOTAL COST
+    double discount = total_cost * (10.0/100.0);
+  cout << "your dicount will be :"<< discount << endl;
 
-  //...
+    if (accept_sale == "y") {
+    quantity++; //add one unit
+    total_cost = total_cost - discount;
+  }
+
 
       
   // DO NOT EDIT BELOW THIS LINE!

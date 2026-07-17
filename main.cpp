@@ -54,7 +54,7 @@ int main() {
   // Print error statements if any of the inputs or combinations of inputs are invalid!
 
   if (quantity <= 0) {
-    cout << "Invalid quantity entered! Quantity must be greater than zero. Aborting." << endl; // (this is an example of how I'd like you to print error messages for this lab)
+    cout << "Invalid quantity entered! Quantity must be greater than zero.  statements forAborting." << endl; // (this is an example of how I'd like you to print error messages for this lab)
     return 1; // abort
   }
 
@@ -66,6 +66,10 @@ int main() {
     cout << "Invalid unit type entered! For apples, the unit type must be 'single' or 'bag'." << endl;
     return 1; // abort
   }//...
+  if ((product_type == "watermelon") && !(unit_type == "single")) {
+    cout <<"invalid input type entered! For watermelons, the unit type must be 'single'." << endl;
+    return 1; //abort
+  }
 
 
   // TODO: COMPUTE THE COST OF THIS PURCHASE
@@ -91,6 +95,9 @@ int main() {
     }
 
   // TODO: APPLY THE OPTIONAL DISCOUNT TO FINAL TOTAL COST
+  double discounted_cost = total_cost * (10/100);
+  cout << "your dicounted cost will be :"<< discounted_cost << endl;
+
   //...
 
       
